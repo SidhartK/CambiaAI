@@ -1,0 +1,22 @@
+{% extends 'prelogin-layout.html' %}
+
+{% block title %} Test {% endblock title %}
+{% block content %}
+	<h1> this is just some bs i am writing</h1>
+	<hr/>
+	<a href="https://www.youtube.com/"> This is a link to youtube </a>
+	<p> Let's just have some fun typing html yay!!!! <br> Let's have some more fun yeee! </p>
+	<script>
+		document.write("Now this is some shit written with JS");
+		const h2 = document.createElement('h2');
+		const hr = document.createElement('hr');
+		h2.innerHTML = 'This is some more shit written in JS';
+		document.body.append(hr);
+		document.body.append(h2);
+	</script>
+	<br>
+	<input type = "text" id="input_field" placeholder="Type here" name = "Type shit here">
+	<button id="start_button" type="button"> Click Here </button>
+	<script src="{{ url_for('static', filename='scripts/test.js') }}"></script>
+
+{% endblock content %}

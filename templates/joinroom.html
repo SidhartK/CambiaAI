@@ -1,0 +1,54 @@
+{% from 'form_helper.html' import displayField %}
+
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Join Room {% endblock title %}
+
+{% block content %}
+	<h1>Join a Room</h1>
+	<form id="join_room_form" action="{{ url_for('joinroom') }}" method="POST">
+		{{ displayField(form.room_code, "Room Code") }}
+		{{ displayField(form.username, "Username") }}
+			<div>
+			{{ form.submit_button }}
+		</div>
+		{{ form.csrf_token }}
+	</form>
+
+	<!-- <input type="text" id="room_code_input" placeholder = "Enter Room Code Here" hidden=true>
+	<button type="button", id="room_code_button" onclick="room_code_button_clicked()" hidden=true>Join Room</button> -->
+	<!-- <script type="text/javascript">
+		function join_room_button_clicked() {
+			join_room_button = document.querySelector('#join_room_button');
+			join_room_button.hidden = true;
+			join_code_form = document.querySelector('#join_room_form');
+			join_code_form .hidden = false;
+			// room_code_button = document.querySelector('#room_code_button');
+			// room_code_button.hidden = false;
+			// console.log(room_code_button.id);
+		}
+		function room_code_button_clicked() {
+			location.replace('play' + document.querySelector('#room_code_input').value);
+		}
+	</script>
+	<script type="text/javascript">
+		document.addEventListener(('DOMContentLoaded'), () => {
+			console.log(document.querySelector('#room_code_button'));
+		})
+	</script> -->
+<!-- 	<button type = "button" id="create_room_button">Create Room</button>
+
+	<img src="{{ url_for('static', filename='images/cards.jpg')}}" alt="no"/>
+	<form action="{{ url_for('index')}}", method="POST">
+
+
+		<div>
+			{{ form.start_button }}
+			<input type="submit" value ="Create">
+		</div>
+
+		{{ form.csrf_token }}
+	</form>
+	<button id="sbutton" type="button"> Click Here </button>
+	<script src="{{ url_for('static', filename='scripts/index.js') }}"></script> -->
+{% endblock content %}
